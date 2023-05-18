@@ -10,6 +10,8 @@ let isRocketCursorActive; // A flag to indicate if the rocket ship cursor is act
 // Function to generate the grid
 function generateGrid(gridSize) {
   const container = document.getElementById('container');
+  let isDrawing = false;
+
   container.innerHTML = ''; // Clear the container
 
   container.style.display = 'grid';
@@ -29,20 +31,33 @@ function generateGrid(gridSize) {
   }
 }
 
+
 // Function to handle drawing on a square when the mouse enters it
 function handleDrawing(event) {
+
+  const colorButton = document.querySelector('#colorPicker');
+  isDrawing = true;
+
+
   if (isDrawing) {
+    console.log("Drawing is enabled");
+    
     const square = event.target;
     const color = colorButton.value;
+    
+    console.log("Color:", color);
     
     square.style.backgroundColor = color;
     
     const squareId = square.getAttribute('data-square-id');
+    console.log("Square ID:", squareId);
+    
     if (discoveredPlanets.includes(squareId)) {
       square.style.backgroundImage = `url(images/${squareId}.png)`;
     }
   }
 }
+
 
 // Function to handle changes in the size of the grid
 function handleGridSizeChange() {
