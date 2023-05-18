@@ -7,6 +7,19 @@ let discoveredPlanets = []; // An array to track the discovered planets and the 
 let rocketCursor; // The rocket ship cursor image element.
 let isRocketCursorActive; // A flag to indicate if the rocket ship cursor is active.
 
+const planetImages = [
+  'images/easSun.jpg',
+  'images/easMercury.jpg',
+  'images/easVenus.jpg',
+  'images/easEarth.jpg',
+  'images/easMars.jpg',
+  'images/easJupiter.jpg',
+  'images/easSaturn.jpg',
+  'images/easUranus.jpg',
+  'images/easNeptune.jpg'
+];
+
+
 // Function to generate the grid
 function generateGrid(gridSize) {
   const container = document.getElementById('container');
@@ -25,11 +38,26 @@ function generateGrid(gridSize) {
       square.classList.add('square');
       square.style.width = `${squareSize}px`;
       square.style.height = `${squareSize}px`;
+      square.setAttribute('data-square-id', `${row}-${column}`);
       square.addEventListener('mouseenter', handleDrawing);
+
+      const random = Math.random();
+
+      if (random < 0.1) {
+        const randomPlanetIndex = Math.floor(Math.random() * planetImages.length);
+        const planetImage = planetImages[randomPlanetIndex];
+        square.style.backgroundImage = `url(${planetImage})`;
+        square.style.backgroundSize = 'cover';
+        square.style.backgroundPosition = 'center';
+      }
+
       container.appendChild(square);
     }
   }
 }
+
+
+
 
 
 // Function to handle drawing on a square when the mouse enters it
@@ -78,4 +106,3 @@ function handleGridSizeChange() {
 generateGrid(parseInt(document.getElementById('gridSizeInput').value));
 document.getElementById('gridSizeSlider').addEventListener('input', handleGridSizeChange);
 document.getElementById('gridSizeInput').addEventListener('input', handleGridSizeChange);
-
