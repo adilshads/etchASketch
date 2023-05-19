@@ -76,6 +76,10 @@ Image Credit:[WikiImages](https://pixabay.com/users/wikiimages-1897/)
 
 Image Credit: [star-mari](https://www.deviantart.com/star-mari)
 
+![Eclipse Background](https://wallpaperscraft.com/download/eclipse_moon_sun_129559/1920x1080)
+
+Image Credit: [A Owen](https://pixabay.com/ru/users/buddy_nath-2005766/)
+
 # License
 
 
