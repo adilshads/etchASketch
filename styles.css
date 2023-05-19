@@ -27,7 +27,7 @@ body {
   height: 30px;
   border: 1px solid #000;
   box-sizing: border-box;
-  background-color: #fff;
+  background-color: transparent;
 }
 
 /* Add styling for the cursor trail */
