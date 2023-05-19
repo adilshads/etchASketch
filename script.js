@@ -81,7 +81,8 @@ function handleColorChange(event) {
     
     console.log("Color:", color);
     
-    square.style.backgroundColor = color;
+    // Set the background color with transparency
+    square.style.backgroundColor = color + '66'; // '66' represents the alpha value, range from 00 (fully transparent) to FF (fully opaque)
   }
 }
 
