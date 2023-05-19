@@ -85,25 +85,42 @@ function handleColorChange(event) {
 
 }
 
-// Function to handle changes in the size of the grid
+// Function to handle changes in the size of the grid by manual input. 
 function handleGridSizeChange() {
-  const gridSize = parseInt(document.getElementById('gridSizeInput').value);
+  const gridSizeInput = document.getElementById('gridSizeInput');
+  const gridSizeSlider = document.getElementById('gridSizeSlider');
+
+  let gridSize = parseInt(gridSizeInput.value);
 
   if (gridSize < 1) {
-    document.getElementById('gridSizeInput').value = 1;
+    gridSize = 1;
   } else if (gridSize > 100) {
-    document.getElementById('gridSizeInput').value = 100;
+    gridSize = 100;
   }
 
-  document.getElementById('gridSizeSlider').value = document.getElementById('gridSizeInput').value;
+  gridSizeInput.value = gridSize;
+  gridSizeSlider.value = gridSize;
 
   generateGrid(gridSize);
 }
 
+// Function to handle changes in the slider value to change size of the grid. 
+function handleSliderChange() {
+  const gridSizeInput = document.getElementById('gridSizeInput');
+  const gridSizeSlider = document.getElementById('gridSizeSlider');
+
+  let gridSize = parseInt(gridSizeSlider.value);
+
+  gridSizeInput.value = gridSize;
+
+  generateGrid(gridSize);
+}
+
+// Update the event listeners for gridSizeInput and gridSizeSlider
 
 generateGrid(parseInt(document.getElementById('gridSizeInput').value));
-document.getElementById('gridSizeSlider').addEventListener('input', handleGridSizeChange);
 document.getElementById('gridSizeInput').addEventListener('input', handleGridSizeChange);
+document.getElementById('gridSizeSlider').addEventListener('input', handleSliderChange);
 
 
 /**  Erase Button */
