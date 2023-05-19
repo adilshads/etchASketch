@@ -85,24 +85,6 @@ function handleColorChange(event) {
 
 }
 
-clearButton = document.getElementById('clearButton');
-
-function resetSquare(square) {
-  square.style.backgroundColor = 'white';
-  square.style.opacity = '0';
-}
-
-// Add an event listener to the erase button
-clearButton.addEventListener('click', function() {
-  const squares = document.getElementsByClassName('square');
-
-  // Reset each square
-  for (let i = 0; i < squares.length; i++) {
-    resetSquare(squares[i]);
-  }
-});
-
-
 // Function to handle changes in the size of the grid
 function handleGridSizeChange() {
   const gridSize = parseInt(document.getElementById('gridSizeInput').value);
@@ -122,3 +104,54 @@ function handleGridSizeChange() {
 generateGrid(parseInt(document.getElementById('gridSizeInput').value));
 document.getElementById('gridSizeSlider').addEventListener('input', handleGridSizeChange);
 document.getElementById('gridSizeInput').addEventListener('input', handleGridSizeChange);
+
+
+/**  Erase Button */
+eraseButton = document.getElementById('eraseButton');
+
+// Add an event listener to the erase button
+eraseButton.addEventListener('click', function() {
+  const squares = document.getElementsByClassName('square');
+
+  // Add event listeners to each square
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].addEventListener('mouseenter', resetSquare);
+  }
+});
+
+// Function to reset the square
+function resetSquare(event) {
+  const square = event.target;
+  square.style.backgroundColor = 'white';
+  square.style.opacity = '0';
+}
+
+/** Draw Button  */
+drawButton = document.getElementById('drawButton');
+
+drawButton.addEventListener('click', function() {
+  const squares = document.getElementsByClassName('square');
+
+  for (let i = 0; i < squares.length; i++) {
+    const square = squares[i];
+    const random = Math.random();
+
+    square.removeEventListener('mouseenter', resetSquare); // Remove the erase functionality
+    square.addEventListener('mouseenter', handleRevealPlanet); // Add the color and reveal functionality
+
+    if (random < 0.1) {
+      const randomPlanetIndex = Math.floor(Math.random() * planetImages.length);
+      const planetImage = planetImages[randomPlanetIndex];
+      square.style.backgroundImage = `url(${planetImage})`;
+      square.style.opacity = '0'; // Hide the image initially
+    }
+  }
+});
+
+
+/** Clear Button */
+clearButton = document.getElementById('clearButton');
+
+clearButton.addEventListener('click', function() {
+  generateGrid(gridSize);
+});
