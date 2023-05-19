@@ -27,3 +27,37 @@ body {
   box-sizing: border-box;
   background-color: #fff;
 }
+
+/* Add styling for the cursor trail */
+#cursor-trail {
+  position: fixed;
+  pointer-events: none;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(255, 165, 0, 0.3), rgba(255, 255, 0, 0.3), rgba(0, 128, 0, 0.3), rgba(0, 0, 255, 0.3), rgba(75, 0, 130, 0.3), rgba(238, 130, 238, 0.3));
+  border-radius: 50%;
+  mix-blend-mode: multiply;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+  animation: cursorTrail 0.5s linear infinite;
+}
+
+@keyframes cursorTrail {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.2);
+  }
+  50% {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.8);
+  }
+}
+
+
+
+

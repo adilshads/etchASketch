@@ -175,3 +175,13 @@ clearButton.addEventListener('click', function() {
 
 generateGrid(10);
 
+
+// Add event listener to track mouse movement
+document.addEventListener('mousemove', function (event) {
+  // Get the cursor trail element
+  const cursorTrail = document.getElementById('cursor-trail');
+
+  // Update the position of the cursor trail
+  cursorTrail.style.left = event.clientX + 'px';
+  cursorTrail.style.top = event.clientY + 'px';
+});
