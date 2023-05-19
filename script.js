@@ -40,7 +40,7 @@ function generateGrid(gridSize) {
       square.style.height = `${squareSize}px`;
       square.setAttribute('data-square-id', `${row}-${column}`);
       square.addEventListener('mouseenter', handleRevealPlanet);
-      square.addEventListener('mouseleave', handleColorChange);
+      square.addEventListener('mouseenter', handleColorChange);
 
       const random = Math.random();
 
