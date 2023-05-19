@@ -5,7 +5,7 @@ let eraseButton; // Returns grid color to white.
 let clearButton; // Clears entire grid from color.
 let discoveredPlanets = []; // An array to track the discovered planets and the sun.
 let rocketCursor; // The rocket ship cursor image element.
-let isRocketCursorActive; // A flag to indicate if the rocket ship cursor is active.
+let isRocketCursorActive = true; // Rocket Cursor variable.
 
 const planetImages = [
   'images/easSun.jpg',
@@ -54,6 +54,7 @@ function generateGrid(gridSize) {
       }
 
       container.appendChild(square);
+
     }
   }
 }
@@ -82,7 +83,6 @@ function handleColorChange(event) {
     
     square.style.backgroundColor = color;
   }
-
 }
 
 // Function to handle changes in the size of the grid by manual input. 
@@ -172,3 +172,6 @@ clearButton = document.getElementById('clearButton');
 clearButton.addEventListener('click', function() {
   generateGrid(gridSize);
 });
+
+generateGrid(10);
+
