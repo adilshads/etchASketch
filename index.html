@@ -7,30 +7,46 @@
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <div class="content">
+    <h1>Etch-a-Sketch: Space Exploration</h1>
 
-  <div id="container"></div>
- 
-  <div id="cursor-trail"></div>
+    <h2>Find all the Planets!</h3>
+    <h3>Recommended Settings - Color: Red | Grid Size: 10 | Opacity: 0.5</h2>
+    <h3>Experiment by changing colors and opacity!</h3>
 
-  <div class="options"> 
-    <button id="eraseButton">Erase</button>
-    <button id="clearButton">Clear</button>
-    <button id="drawButton">Draw</button>
-    <input type="color" id="colorPicker" value="#ff0000">
-    
-    <div class="grid-size-selector">
-      <label for="gridSizeSlider">Grid Size:</label>
-      <input type="range" id="gridSizeSlider" min="1" max="100" step="1" value="10">
-      <input type="number" id="gridSizeInput" min="1" max="100">
-    </div>
-    <div class="Opacity Selector">
-      <label for="opacitySlider">Opacity:</label>
-      <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="0.5">
-      <input type="number" id="opacityInput" min="0" max="1" step="0.1" value="0.5">
+  </div>
+
+  <div class="userControl">
+    <div id="container"></div>
+
+    <div class="options"> 
+      <div class="userDecisions">
+        <button id="eraseButton">Erase</button>
+        <button id="clearButton">Clear</button>
+        <button id="drawButton">Draw</button>
+        <input type="color" id="colorPicker" value="#ff0000">
+      </div>
+      <div class="inputsAndSliders">
+        <div class="grid-size-selector">
+          <label for="gridSizeSlider">Grid Size:</label>
+          <input type="range" id="gridSizeSlider" min="1" max="100" step="1" value="10">
+          <input type="number" id="gridSizeInput" min="1" max="100" step="1" value="10">
+        </div>
+        <div class="Opacity Selector">
+          <label for="opacitySlider">Opacity:</label>
+          <input type="range" id="opacitySlider" min="0" max="1" step="0.1" value="0.5">
+          <input type="number" id="opacityInput" min="0" max="1" step="0.1" value="0.5">
+        </div>
+      </div>
     </div>
   </div>
+
+  <div id="cursor-trail"></div>
+
   <script src="script.js"></script>
+
 </body>
 </html>
 

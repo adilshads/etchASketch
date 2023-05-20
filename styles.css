@@ -1,5 +1,6 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -9,17 +10,41 @@ body {
   color: white;
 }
 
-.options {
-  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background color to the options section */
-  /* You can adjust the rgba values to change the background color and transparency */
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
+
+.content h1,
+.content h2,
+.content h3 {
+  margin: 0;
+}
+
+.userControl {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+
+.options {
+  /*background-color: rgba(0, 0, 0, 0.5);  Add a semi-transparent background color to the options section */
+  /* You can adjust the rgba values to change the background color and transparency */
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+}
+
 #container {
   width: 500px;
   height: 500px;
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto; 
-  justify-content: center;
+  justify-content: space-between;
   align-content: center;
   border: 1px solid #000;
 }
@@ -64,3 +89,47 @@ body {
   }
 }
 
+/* Style Buttons */
+
+/* Example button styling */
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgba(76, 175, 80, 0.5);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: rgba(76, 175, 80, 0.7); /* Adjust the RGB values and alpha (0.7) for transparency */
+}
+
+/* Button active effect */
+button:active {
+  background-color: rgba(76, 175, 80, 0.8); /* Adjust the RGB values and alpha (0.8) for transparency */
+}
+
+/* Example styling for specific buttons */
+#eraseButton {
+  background-color: #f44336;
+}
+
+#clearButton {
+  background-color: #2196f3;
+}
+
+#drawButton {
+  background-color: #ff9800;
+}
+
+/* Example styling for colorPicker */
+#colorPicker {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
