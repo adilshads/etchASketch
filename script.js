@@ -152,7 +152,7 @@ function resetSquare(event) {
   square.style.opacity = '0';
 }
 
-/** Draw Button  */
+/** Draw Button  
 drawButton = document.getElementById('drawButton');
 
 drawButton.addEventListener('click', function() {
@@ -170,6 +170,29 @@ drawButton.addEventListener('click', function() {
       const planetImage = planetImages[randomPlanetIndex];
       square.style.backgroundImage = `url(${planetImage})`;
       square.style.opacity = '0'; // Hide the image initially
+    }
+  }
+});
+
+
+*/
+
+// Draw Button
+// Draw Button
+drawButton = document.getElementById('drawButton');
+
+drawButton.addEventListener('click', function() {
+  const squares = document.getElementsByClassName('square');
+
+  for (let i = 0; i < squares.length; i++) {
+    const square = squares[i];
+
+    if (square.style.opacity === '0') {
+      square.removeEventListener('mouseenter', resetSquare); // Remove the erase functionality
+      square.addEventListener('mouseenter', handleRevealPlanet); // Add the reveal functionality
+    } else {
+      square.removeEventListener('mouseenter', handleRevealPlanet); // Remove the reveal functionality
+      square.addEventListener('mouseenter', handleColorChange); // Add the color functionality
     }
   }
 });
