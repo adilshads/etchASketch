@@ -113,7 +113,7 @@ button:active {
   background-color: rgba(76, 175, 80, 0.8); /* Adjust the RGB values and alpha (0.8) for transparency */
 }
 
-/* Example styling for specific buttons */
+/* Styling for specific buttons */
 #eraseButton {
   background-color: #f44336;
 }
@@ -126,7 +126,7 @@ button:active {
   background-color: #ff9800;
 }
 
-/* Example styling for colorPicker */
+/* Styling for colorPicker */
 #colorPicker {
   padding: 5px;
   border: none;
