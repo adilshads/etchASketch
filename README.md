@@ -58,9 +58,9 @@ MVC Architecture: Our project follows the Model-View-Controller (MVC) pattern to
 By following these best practices and design patterns, we aim to create a clean, maintainable, and scalable codebase.
 
 # Screenshots
-[Opening Screen](images/startScreen.png)
+![Opening Screen](images/startScreen.png)
 
-[Playing Screen](images/playScreen.png)
+![Playing Screen](images/playScreen.png)
 
 # Tech/Framework used
 
