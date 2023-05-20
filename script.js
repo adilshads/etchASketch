@@ -67,25 +67,8 @@ function handleRevealPlanet(event) {
   square.style.opacity = '1'; // Reveal the image
   discoveredPlanets.push(squareId);
 }
-/** 
-// Function to handle changing the colors.
-function handleColorChange(event) {
-  const colorButton = document.querySelector('#colorPicker');
-  isDrawing = true;
 
- if (isDrawing) {
-    console.log("Drawing is enabled");
-    
-    const square = event.target;
-    const color = colorButton.value;
-    
-    console.log("Color:", color);
-    
-    // Set the background color with transparency
-    square.style.backgroundColor = color + '66'; // '66' represents the alpha value, range from 00 (fully transparent) to FF (fully opaque)
-  }
-}
-*/
+// Handle Color Change
 function handleColorChange(event) {
   const colorButton = document.querySelector('#colorPicker');
   const opacitySlider = document.querySelector('#opacitySlider');
@@ -96,17 +79,20 @@ function handleColorChange(event) {
   if (isDrawing) {
     const square = event.target;
     const color = colorButton.value;
-    const opacity = opacitySlider.value;
+    const opacity = parseFloat(opacityInput.value);
+
 
     square.style.backgroundColor = `${color}${convertOpacityToHex(opacity)}`;
   }
 }
+// The following functions handle opacity 
 
 function convertOpacityToHex(opacity) {
   const decimal = Math.round(opacity * 255);
   const hex = decimal.toString(16).padStart(2, '0');
   return hex;
 }
+
 
 // Function to handle changes in the size of the grid by manual input. 
 function handleGridSizeChange() {
