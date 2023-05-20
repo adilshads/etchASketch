@@ -42,6 +42,8 @@ function generateGrid(gridSize) {
       square.addEventListener('mouseenter', handleRevealPlanet);
       square.addEventListener('mouseenter', handleColorChange);
 
+      square.style.backgroundColor = 'transparent';
+
       const random = Math.random();
 
       if (random < 0.1) {
@@ -132,6 +134,25 @@ document.getElementById('gridSizeInput').addEventListener('input', handleGridSiz
 document.getElementById('gridSizeSlider').addEventListener('input', handleSliderChange);
 
 
+// Function to handle changes in the slider value to change opacity.  
+
+function handleOpacitySliderChange() {
+  const opacityInput = document.getElementById('opacityInput');
+  const opacitySlider = document.getElementById('opacitySlider');
+
+  const opacity = parseFloat(opacitySlider.value);
+  opacityInput.value = opacity;
+
+  opacityInput.value = opacity;
+  opacitySlider.value = opacity;
+
+}
+
+// Update the event listeners for opacityInput and opacitySlider
+document.getElementById('opacityInput').addEventListener('input', handleOpacitySliderChange);
+document.getElementById('opacitySlider').addEventListener('input', handleOpacitySliderChange);
+
+
 /**  Erase Button */
 eraseButton = document.getElementById('eraseButton');
 
@@ -152,32 +173,6 @@ function resetSquare(event) {
   square.style.opacity = '0';
 }
 
-/** Draw Button  
-drawButton = document.getElementById('drawButton');
-
-drawButton.addEventListener('click', function() {
-  const squares = document.getElementsByClassName('square');
-
-  for (let i = 0; i < squares.length; i++) {
-    const square = squares[i];
-    const random = Math.random();
-
-    square.removeEventListener('mouseenter', resetSquare); // Remove the erase functionality
-    square.addEventListener('mouseenter', handleRevealPlanet); // Add the color and reveal functionality
-
-    if (random < 0.1) {
-      const randomPlanetIndex = Math.floor(Math.random() * planetImages.length);
-      const planetImage = planetImages[randomPlanetIndex];
-      square.style.backgroundImage = `url(${planetImage})`;
-      square.style.opacity = '0'; // Hide the image initially
-    }
-  }
-});
-
-
-*/
-
-// Draw Button
 // Draw Button
 drawButton = document.getElementById('drawButton');
 
