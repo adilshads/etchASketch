@@ -6,8 +6,13 @@ body {
   cursor: url(images/easRocket.cur), auto;
   background: url('images/easBackground.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: white;
 }
 
+.options {
+  background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background color to the options section */
+  /* You can adjust the rgba values to change the background color and transparency */
+}
 #container {
   width: 500px;
   height: 500px;
